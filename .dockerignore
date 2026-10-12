@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+reports
+.git
+.env
+.env.local
+.env.*.local
+# Os originais não entram na imagem: as versões otimizadas já estão em public/.
+assets-originais
+*.md

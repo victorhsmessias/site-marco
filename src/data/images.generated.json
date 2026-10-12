@@ -1,0 +1,154 @@
+{
+  "01-noiva-no-carro": {
+    "width": 3016,
+    "height": 4021,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1600,
+      1920
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAwCdASoQABUAPu1iqk2ppaQiMAgBMB2JYwAAYcNwHUZq4KFRaIYAAP5+onkiQiVYfcl5M2UPA9/Zd23LQT9qr9K1hXEyBlxR+z0XpdckJ2j5TLunoLF/3XHCJlOH4amgwMKmb8ONmoZMLcZoBfhYk1wZwAAA"
+  },
+  "02-casal-fundo-verde": {
+    "width": 900,
+    "height": 1200,
+    "widths": [
+      360,
+      540,
+      720,
+      900
+    ],
+    "fallbackWidth": 900,
+    "placeholder": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAwCdASoQABUAPu1qrU8ppiQiMAgBMB2JQAqkcPROF/jXMGwgingA/vQojFLpuPEgCygYVGYp+Bu7tGRcuWKRnw/NnWfhhIqL+2wSaFiyuFpHwlW0hRgjUQAAAA=="
+  },
+  "03-casal-copos-de-leite": {
+    "width": 1284,
+    "height": 1712,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAwCdASoQABUAPu1iqk4ppaQiMAgBMB2JYwCAAAiuOtEoGYONxfugAP7yrG5mPiMhOZU0N9ukEgtpfLoszPZT/TWb+EpILtc62wPdQDv4gXxnOOengo4TgRpRMyfuLMvliAAA"
+  },
+  "04-casal-preto-e-branco": {
+    "width": 1284,
+    "height": 1712,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABUAPu1krU6ppaSiMAgBMB2JaQAAW+lF1/NmjQ24sAD+8Qvx+NQRNrKzzTws/b/DTuUnBRCmUk4bcsQsLvMYmVAwEAAA"
+  },
+  "05-noiva-sofa-capitone": {
+    "width": 900,
+    "height": 1200,
+    "widths": [
+      360,
+      540,
+      720,
+      900
+    ],
+    "fallbackWidth": 900,
+    "placeholder": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoQABUAPu1krU6ppaSiMAgBMB2JYwC06CIjCSzu1eyTAKogAP7pm0c1yEbpH1m05nNcFO3U0gXXCdB7oJzfq6ViGaO6y/Pe0xsSBBKAAAA="
+  },
+  "06-casal-loiro-decoracao": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1600,
+      1920
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwBACdASoQABUAPu1iqk2ppaQiMAgBMB2JYgCdMoABhZc7fbBgw+krJgAA/sws848psCvfK6R68KGQgHQSoaJvZ2viGLx8mBiNEfdUU5SLKqQXGPNGh3i8C7PsZ39MB5xgKHZ4AAA="
+  },
+  "07-casal-bolo": {
+    "width": 3072,
+    "height": 4096,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1600,
+      1920
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZACdMoADTXWqxCeqUzGoAP0z067WOg6NE1p/Sh5DBw7t67TsZNaqnXMxxTFUR3U2nBjIYw3LJafuiTLFQAAA"
+  },
+  "08-casal-close": {
+    "width": 3024,
+    "height": 4032,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1600,
+      1920
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBOmUI7gA9xiFOquoAD+hjfAN54bDz2+bbyYOsnjO0hHIT2265MZlr85aR20tGv7RMq49CwAAA=="
+  },
+  "09-mesa-doces-copos-de-leite": {
+    "width": 3024,
+    "height": 4032,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1600,
+      1920
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoQABUAPu1iqk4ppaQiMAgBMB2JQBOmUABmAa0nU+smAAD+EP4VLGXn/1MB2OcQvJgZdEvmmQdr9OkVAGOMzO7zXLQIImmKsUNoAA=="
+  },
+  "10-mesa-doces-jardim-colorido": {
+    "width": 1613,
+    "height": 2147,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1600
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADQAwCdASoQABUAPu1iqk4ppaQiMAgBMB2JQBWABEMyTN5mr7mCOwAA/tJkJ/rHvZHb0z1ZXPmcJYs6KPLpkEJbWMx9IbVDz+D8QAeY/yCyRpKax4XX7aOnSfzTWXGBM75ShEry168cSx3/xwJAAA=="
+  },
+  "11-assessor-cerimonia": {
+    "width": 1284,
+    "height": 2283,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACQBACdASoQAB0APu1krU2ppaSiMAgBMB2JQBOmUGeVCTA69+FViH0eu8XIb2AA/hmoEX6soJs6ypeQ0aP1yLKOcIicHvgHO/DvF1yqWmjqjU8XM1ikIcUROQWgTs6uKS3mGPKP/KgHwue5GYvLqroV+IyJSSgmCwXIeaXxZuR6Y+qpgAA="
+  }
+}

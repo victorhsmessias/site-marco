@@ -1,0 +1,587 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   Sistema de design — Marco Bispo Assessoria
+   Conceito: editorial, luxo discreto. Muito respiro, fotos grandes,
+   serifa nos títulos e sans-serif limpa no corpo.
+   ========================================================================== */
+
+@theme inline {
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-dm-sans), 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  /* Cores. O verde é o da marca (fundo do site antigo: #203C2E). */
+  --color-forest: #203c2e;
+  --color-forest-deep: #16291f;
+  --color-forest-soft: #2b4d3c;
+  --color-sage: #c5d0c8; /* texto corrido sobre verde */
+  --color-ivory: #faf7f2;
+  --color-sand: #f1ebe0;
+  --color-line: #e3dacb; /* fios e divisórias sobre fundo claro */
+  --color-gold: #b89b6a; /* detalhes e botão sobre verde (não usar em texto sobre claro) */
+  --color-gold-light: #d9c7a3; /* texto dourado sobre verde */
+  --color-gold-deep: #735a2e; /* texto dourado sobre claro (contraste AA) */
+  --color-ink: #2b2b28;
+  --color-ink-muted: #5f5c54;
+  --color-field: #8c8778; /* borda de campos de formulário (3:1) */
+
+  /* Tipografia fluida */
+  --text-display: clamp(2.75rem, 1.55rem + 5.4vw, 5.75rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.015em;
+  --text-h2: clamp(2.125rem, 1.5rem + 2.7vw, 3.5rem);
+  --text-h2--line-height: 1.08;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h3: clamp(1.5rem, 1.38rem + 0.5vw, 1.8125rem);
+  --text-h3--line-height: 1.18;
+  --text-lead: clamp(1.0625rem, 1.02rem + 0.25vw, 1.1875rem);
+  --text-lead--line-height: 1.65;
+  --text-quote: clamp(1.5rem, 1.25rem + 1.1vw, 2.125rem);
+  --text-quote--line-height: 1.3;
+
+  /* Espaçamento */
+  --spacing-section: clamp(4.5rem, 3rem + 7vw, 9rem);
+  --spacing-gutter: clamp(1.25rem, 0.4rem + 3.6vw, 3rem);
+  --container-site: 78rem;
+
+  /* Movimento */
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+:root {
+  --header-h: 4.5rem;
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --header-h: 5.25rem;
+  }
+}
+
+@layer base {
+  html {
+    scroll-padding-top: calc(var(--header-h) + 0.5rem);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Trava a rolagem da página enquanto o menu ou o lightbox estão abertos. */
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-forest);
+    color: var(--color-ivory);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  .on-dark :focus-visible,
+  .on-dark:focus-visible {
+    outline-color: var(--color-gold-light);
+  }
+
+  /* Bloco claro dentro de uma seção escura (ex.: cartão do formulário). */
+  .on-dark .on-light :focus-visible {
+    outline-color: var(--color-forest);
+  }
+
+  button,
+  summary,
+  [role='button'] {
+    cursor: pointer;
+  }
+
+  dialog {
+    max-width: none;
+    max-height: none;
+  }
+}
+
+@layer components {
+  /* Rótulo pequeno acima dos títulos de seção */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-gold-deep);
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 2.25rem;
+    height: 1px;
+    background-color: var(--color-gold);
+  }
+
+  .on-dark .eyebrow {
+    color: var(--color-gold-light);
+  }
+
+  /* Botões */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    min-height: 3.25rem;
+    padding: 0.875rem 1.75rem;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    transition:
+      background-color 0.3s var(--ease-soft),
+      border-color 0.3s var(--ease-soft),
+      color 0.3s var(--ease-soft);
+  }
+
+  .btn-sm {
+    min-height: 2.75rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  .btn-primary {
+    background-color: var(--color-forest);
+    color: var(--color-ivory);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-forest-deep);
+  }
+
+  .btn-gold {
+    background-color: var(--color-gold);
+    color: var(--color-forest-deep);
+  }
+
+  .btn-gold:hover {
+    background-color: var(--color-gold-light);
+  }
+
+  .btn-outline {
+    border-color: var(--color-forest);
+    color: var(--color-forest);
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-forest);
+    color: var(--color-ivory);
+  }
+
+  .btn-outline-light {
+    border-color: color-mix(in srgb, var(--color-ivory) 55%, transparent);
+    color: var(--color-ivory);
+  }
+
+  .btn-outline-light:hover {
+    border-color: var(--color-ivory);
+    background-color: var(--color-ivory);
+    color: var(--color-forest-deep);
+  }
+
+  /* Link de texto com fio que cresce no hover */
+  .link-line {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 1px;
+    padding-bottom: 2px;
+    transition: background-size 0.4s var(--ease-soft);
+  }
+
+  .link-line:hover {
+    background-size: 0 1px;
+    background-position: 100% 100%;
+  }
+
+  /* Campos de formulário */
+  .field {
+    display: block;
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-field);
+    border-radius: 2px;
+    background-color: #fff;
+    color: var(--color-ink);
+    font-size: 1rem; /* 16 px evita o zoom automático do iOS */
+    line-height: 1.5;
+    transition:
+      border-color 0.2s var(--ease-soft),
+      box-shadow 0.2s var(--ease-soft);
+  }
+
+  .field::placeholder {
+    color: var(--color-ink-muted);
+    opacity: 1;
+  }
+
+  .field:focus-visible {
+    outline: none;
+    border-color: var(--color-forest);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-forest) 28%, transparent);
+  }
+
+  select.field {
+    appearance: none;
+    padding-right: 2.75rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23203c2e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center;
+    background-size: 1.25rem;
+  }
+
+  /* Acordeão do FAQ (details/summary nativo) */
+  .faq-item summary {
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    transition: transform 0.35s var(--ease-soft);
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Movimento: acompanha a rolagem, com propósito e sem exagero. Tudo abaixo é
+   desligado quando o visitante pede menos movimento (prefers-reduced-motion).
+
+   Há dois grupos:
+   1. Entradas (data-reveal): disparam quando o elemento entra na tela.
+      Funcionam em todos os navegadores (ver RevealObserver.tsx).
+   2. Efeitos presos à rolagem (parallax, faixa de texto, ornamento, barra de
+      progresso): CSS puro (animation-timeline). Onde o navegador ainda não
+      tem esse recurso, os elementos ficam parados, sem quebrar nada.
+   -------------------------------------------------------------------------- */
+
+/* As entradas laterais não podem criar rolagem horizontal. */
+main {
+  overflow-x: clip;
+}
+
+/* Fio que se desenha da esquerda para a direita (cartões e etapas). */
+.draw-line {
+  position: relative;
+}
+
+.draw-line::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background-color: color-mix(in srgb, var(--color-gold) 60%, transparent);
+  transform-origin: left;
+}
+
+/* Elementos que só existem onde há animação presa à rolagem. */
+.scroll-progress {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* ---------- 1. Entradas ---------- */
+
+  /* Só valem com JavaScript ativo (html[data-js]), para o conteúdo nunca
+     ficar escondido sem ele. Variações: data-reveal="left | right | zoom |
+     fade | title | image". O atraso em cascata vem de --reveal-delay. */
+  html[data-js] [data-reveal] {
+    opacity: 0;
+    transform: translateY(2.75rem);
+    transition:
+      opacity 1s var(--ease-soft),
+      transform 1.2s var(--ease-soft),
+      clip-path 1.2s var(--ease-soft);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  html[data-js] [data-reveal='left'] {
+    transform: translateX(-3.5rem);
+  }
+
+  html[data-js] [data-reveal='right'] {
+    transform: translateX(3.5rem);
+  }
+
+  html[data-js] [data-reveal='zoom'] {
+    transform: scale(0.9);
+  }
+
+  html[data-js] [data-reveal='fade'] {
+    transform: none;
+  }
+
+  /* Títulos: sobem enquanto uma "cortina" os revela de cima para baixo. */
+  html[data-js] [data-reveal='title'] {
+    transform: translateY(1.75rem);
+    clip-path: inset(0 0 100% 0);
+  }
+
+  /* Fotos: a moldura abre de cima para baixo e a foto assenta de um leve zoom. */
+  html[data-js] [data-reveal='image'] {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 100% 0);
+    transition-duration: 1.5s;
+  }
+
+  html[data-js] [data-reveal='image'] img {
+    transform: scale(1.18);
+    transition: transform 1.9s var(--ease-soft);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  html[data-js] [data-reveal][data-revealed] {
+    opacity: 1;
+    transform: none;
+  }
+
+  html[data-js] [data-reveal='title'][data-revealed] {
+    /* margem negativa: não corta acentos nem a inclinação do itálico */
+    clip-path: inset(-0.3em);
+  }
+
+  html[data-js] [data-reveal='image'][data-revealed] {
+    clip-path: inset(0);
+  }
+
+  html[data-js] [data-reveal='image'][data-revealed] img {
+    transform: none;
+  }
+
+  /* O fio dourado se desenha logo depois que o bloco aparece. */
+  html[data-js] [data-reveal].draw-line::before,
+  html[data-js] .eyebrow[data-reveal]::before {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.4s var(--ease-soft);
+    transition-delay: calc(var(--reveal-delay, 0ms) + 200ms);
+  }
+
+  html[data-js] [data-reveal][data-revealed].draw-line::before,
+  html[data-js] .eyebrow[data-reveal][data-revealed]::before {
+    transform: scaleX(1);
+  }
+
+  /* Entrada do hero: só transform (sem opacidade), para não atrasar o LCP. */
+  .hero-rise {
+    animation: hero-rise 1s var(--ease-soft) both;
+    animation-delay: var(--rise-delay, 0ms);
+  }
+
+  .hero-zoom {
+    animation: hero-zoom 1.6s var(--ease-soft) both;
+  }
+
+  @keyframes hero-rise {
+    from {
+      transform: translateY(1.25rem);
+    }
+  }
+
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1.06);
+    }
+  }
+
+  /* ---------- 2. Efeitos presos à rolagem ---------- */
+
+  @supports (animation-timeline: view()) {
+    /* Hero: as duas fotos e o arco andam em velocidades diferentes. */
+    .parallax-up,
+    .parallax-down,
+    .parallax-soft {
+      animation: linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 100vh;
+    }
+
+    .parallax-up {
+      animation-name: parallax-up;
+    }
+
+    .parallax-down {
+      animation-name: parallax-down;
+    }
+
+    .parallax-soft {
+      animation-name: parallax-soft;
+    }
+
+    @keyframes parallax-up {
+      to {
+        transform: translateY(-5rem);
+      }
+    }
+
+    @keyframes parallax-down {
+      to {
+        transform: translateY(3rem);
+      }
+    }
+
+    @keyframes parallax-soft {
+      to {
+        transform: translateY(1.75rem);
+      }
+    }
+
+    /* Atenção: quem recorta estes elementos precisa usar overflow: clip (classe
+       overflow-clip), não hidden. Com hidden, o recorte vira a referência de
+       rolagem e a animação fica parada. */
+
+    /* Fotos das seções: deslizam devagar dentro da moldura enquanto passam pela tela. */
+    .img-parallax {
+      animation: img-parallax linear both;
+      animation-timeline: view();
+      animation-range: cover;
+    }
+
+    @keyframes img-parallax {
+      from {
+        transform: translateY(-7%) scale(1.16);
+      }
+
+      to {
+        transform: translateY(7%) scale(1.16);
+      }
+    }
+
+    /* Faixa de texto que corre de lado conforme a página rola. */
+    .marquee-track {
+      animation: marquee linear both;
+      animation-timeline: view();
+      animation-range: cover;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(2rem);
+      }
+
+      to {
+        transform: translateX(calc(-22vw - 14rem));
+      }
+    }
+
+    /* Ornamento da logo que gira devagar com a rolagem. */
+    .scroll-spin {
+      animation: scroll-spin linear both;
+      animation-timeline: view();
+      animation-range: cover;
+    }
+
+    @keyframes scroll-spin {
+      to {
+        transform: rotate(120deg);
+      }
+    }
+
+    /* Barra dourada no cabeçalho: mostra quanto da página já foi percorrido. */
+    .scroll-progress {
+      display: block;
+      transform-origin: left;
+      animation: scroll-progress linear both;
+      animation-timeline: scroll(root block);
+    }
+
+    @keyframes scroll-progress {
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  /* ---------- Menu, lightbox e FAQ ---------- */
+
+  dialog[open].dialog-fade {
+    animation: dialog-fade 0.35s var(--ease-soft);
+  }
+
+  dialog[open].dialog-fade::backdrop {
+    animation: dialog-fade 0.35s var(--ease-soft);
+  }
+
+  @keyframes dialog-fade {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .faq-item::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size 0.4s var(--ease-soft),
+      content-visibility 0.4s allow-discrete;
+  }
+
+  .faq-item[open]::details-content {
+    block-size: auto;
+  }
+
+  @supports (interpolate-size: allow-keywords) {
+    .faq-item {
+      interpolate-size: allow-keywords;
+    }
+  }
+}
+
+/* O botão flutuante espera o aviso de cookies sair da tela, para não cobri-lo. */
+body:has([data-cookie-banner]) .whatsapp-fab {
+  display: none;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
