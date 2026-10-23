@@ -11,17 +11,17 @@ export const hero = {
   // A palavra em `titleEmphasis` aparece em itálico dourado, no fim do título.
   title: 'Fazemos do seu dia um evento',
   titleEmphasis: 'inesquecível',
-  lead: 'Planejamento, produção e cerimonial de casamentos e festas de 15 anos em Londrina e região, com cuidado em cada detalhe para que você viva o seu dia por inteiro.',
+  lead: 'Planejamento, organização e cerimonial de casamentos, festas de 15 anos, aniversários e eventos corporativos em Londrina e região, com cuidado em cada detalhe.',
   secondaryCta: { label: 'Ver portfólio', href: '/#portfolio' },
-  proof: ['Desde 2014', 'Londrina e região', 'Casamentos e festas de 15 anos'],
+  proof: ['Desde 2014', 'Londrina e região', 'Casamentos, festas e eventos corporativos'],
 };
 
 export const about = {
   eyebrow: 'Sobre',
   title: 'Somos uma empresa que respira amor',
   paragraphs: [
-    'A Marco Bispo Assessoria nasceu em 2014, em Londrina. Com muito trabalho, conquistamos nosso espaço na cidade e na região, cuidando de casamentos, festas de 15 anos e celebrações que marcam a vida de quem confia na gente.',
-    'Como assessoria de eventos em Londrina, acompanhamos cada etapa de perto: planejamento, produção, organização e gerenciamento, para que você aproveite o caminho com tranquilidade.',
+    'A Marco Bispo Assessoria nasceu em 2014, em Londrina. Com muito trabalho, conquistamos nosso espaço na cidade e na região, cuidando de casamentos, festas de 15 anos, aniversários e eventos corporativos que marcam a vida de quem confia na gente.',
+    'Como assessoria de eventos em Londrina, acompanhamos cada etapa de perto: planejamento, organização e gerenciamento, para que você aproveite o caminho com tranquilidade.',
   ],
   // TODO(content): afirmação do cliente, sem fonte ("entre as 5 melhores empresas
   // de assessoria da cidade"). Confirmar a origem (prêmio, ranking, ano) ou
@@ -65,7 +65,7 @@ export const processIntro = {
 export const portfolioIntro = {
   eyebrow: 'Portfólio',
   title: 'Histórias que ajudamos a contar',
-  lead: 'Alguns momentos de casamentos e decorações que tivemos a alegria de acompanhar.',
+  lead: 'Alguns momentos e detalhes de eventos que tivemos a alegria de acompanhar.',
   instagramCta: 'Ver mais no Instagram',
 };
 
@@ -87,7 +87,7 @@ export const contact = {
   formTitle: 'Peça o seu orçamento',
   privacyNote:
     'Os dados preenchidos servem apenas para montar a mensagem no seu WhatsApp. Este site não guarda as informações do formulário.',
-  eventTypes: ['Casamento', 'Festa de 15 anos', 'Decoração e produção', 'Outro evento'],
+  eventTypes: ['Casamento', 'Festa de 15 anos', 'Aniversário', 'Evento corporativo', 'Outro evento'],
 };
 
 /** Texto único de chamada para ação, usado em todos os botões de orçamento. */

@@ -26,11 +26,19 @@ export const services: Service[] = [
     published: true,
   },
   {
-    id: 'decoracao-e-producao',
-    title: 'Decoração e produção',
+    id: 'aniversarios',
+    title: 'Aniversários',
     description:
-      'Ambientes, mesas e flores pensados em conjunto, para que o cenário traduza o estilo da sua celebração.',
-    eventType: 'Decoração e produção',
+      'Aniversários em Londrina e região, organizados com cuidado para que você aproveite a festa ao lado de quem ama.',
+    eventType: 'Aniversário',
+    published: true,
+  },
+  {
+    id: 'eventos-corporativos',
+    title: 'Eventos corporativos',
+    description:
+      'Planejamento e coordenação de eventos corporativos, com organização e pontualidade em cada etapa.',
+    eventType: 'Evento corporativo',
     published: true,
   },
   {
@@ -40,16 +48,5 @@ export const services: Service[] = [
       'Organização, cronograma e coordenação do evento, para que tudo aconteça no tempo certo.',
     eventType: 'Outro evento',
     published: true,
-  },
-  // TODO(content): confirmar com o cliente se a empresa atende eventos
-  // corporativos e outros eventos sociais e ajustar a descrição. Depois,
-  // trocar para `published: true`.
-  {
-    id: 'eventos-corporativos-e-sociais',
-    title: 'Eventos corporativos e sociais',
-    description:
-      'TODO(content): descrição a confirmar com o cliente (tipos de evento atendidos).',
-    eventType: 'Outro evento',
-    published: false,
   },
 ];

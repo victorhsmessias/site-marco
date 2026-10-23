@@ -26,9 +26,8 @@ export const faq: FaqItem[] = [
   },
   {
     question: 'Quais tipos de evento vocês realizam?',
-    // TODO(content): confirmar se a empresa atende eventos corporativos e outros tipos.
     answer:
-      'Trabalhamos com planejamento, produção, organização e gerenciamento de eventos, com destaque para casamentos, festas de 15 anos e decoração. Para outros tipos de celebração, converse com a nossa equipe.',
+      'Trabalhamos com planejamento, organização e gerenciamento de casamentos, festas de 15 anos, aniversários e eventos corporativos. Para outros tipos de evento, converse com a nossa equipe.',
   },
   {
     question: 'A equipe acompanha o dia do evento?',

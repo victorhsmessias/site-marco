@@ -79,7 +79,7 @@ export function Hero() {
                   <div className="h-full w-full translate-x-3 -translate-y-3 rounded-t-full border border-gold/70 sm:translate-x-4 sm:-translate-y-4" />
                 </div>
                 <Picture
-                  image={images.noivaNoCarro}
+                  image={images.casalClose}
                   priority
                   sizes="(min-width: 1280px) 430px, (min-width: 1024px) 40vw, (min-width: 640px) 460px, 76vw"
                   className="relative block aspect-[4/5] overflow-hidden rounded-t-full bg-sand"
@@ -87,7 +87,7 @@ export function Hero() {
                 />
               </div>
               <figcaption className="mt-3 text-right">
-                <PhotoCreditLine credit={images.noivaNoCarro.credit} />
+                <PhotoCreditLine credit={images.casalClose.credit} />
               </figcaption>
             </div>
           </figure>

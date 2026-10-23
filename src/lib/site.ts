@@ -19,7 +19,7 @@ export const site = {
   region: 'Londrina e região',
   tagline: 'Fazemos do seu dia um evento inesquecível.',
   description:
-    'Assessoria de casamento e de eventos em Londrina/PR desde 2014. Planejamento, produção, organização e cerimonial de casamentos e festas de 15 anos, com cuidado em cada detalhe.',
+    'Assessoria de casamento e de eventos em Londrina/PR desde 2014. Planejamento, organização e cerimonial de casamentos, festas de 15 anos, aniversários e eventos corporativos, com cuidado em cada detalhe.',
 
   whatsapp: {
     number: WHATSAPP_NUMBER,

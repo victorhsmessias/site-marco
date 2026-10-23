@@ -21,7 +21,7 @@ const FOREST_DEEP = '#16291F';
 const IVORY = '#FAF7F2';
 const GOLD = '#B89B6A';
 
-const OG_PHOTO = 'marcobispo-01-noiva-no-carro.jpg';
+const OG_PHOTO = 'marcobispo-08-casal-close.jpg';
 
 /** Arredonda as coordenadas para 2 casas: mesmo desenho, arquivo bem menor. */
 const roundPath = (d) => d.replace(/-?\d*\.\d+/g, (n) => String(Number(Number(n).toFixed(2))));
@@ -99,8 +99,8 @@ export const logoWordmark = {
     .rotate()
     .resize({ width: photoW })
     .toBuffer({ resolveWithObject: true });
-  // Recorte vertical centrado no rosto (a ~36% da altura da foto).
-  const top = Math.max(0, Math.min(photo.info.height - H, Math.round(photo.info.height * 0.36 - H * 0.45)));
+  // Recorte vertical centrado nos rostos (a ~25% da altura da foto).
+  const top = Math.max(0, Math.min(photo.info.height - H, Math.round(photo.info.height * 0.25 - H * 0.45)));
   const photoCrop = await sharp(photo.data).extract({ left: 0, top, width: photoW, height: H }).toBuffer();
 
   const panel = Buffer.from(

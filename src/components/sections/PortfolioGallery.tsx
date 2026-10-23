@@ -7,6 +7,7 @@ import { PhotoCreditLine } from '@/components/ui/PhotoCreditLine';
 import { Picture } from '@/components/ui/Picture';
 import type { PortfolioCategory, PortfolioImage } from '@/data/portfolio';
 import { stagger } from '@/lib/motion';
+import { site } from '@/lib/site';
 
 type Filter = PortfolioCategory | 'todos';
 
@@ -129,6 +130,21 @@ export function PortfolioGallery({ items, categories }: PortfolioGalleryProps) {
           );
         })}
       </ul>
+
+      {visible.length === 0 && (
+        <p className="mx-auto max-w-md border-y border-line py-10 text-center text-pretty text-ink-muted">
+          Ainda não temos fotos de {filterLabel.toLowerCase()} por aqui. Veja mais trabalhos no{' '}
+          <a
+            href={site.instagram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-forest underline decoration-gold decoration-1 underline-offset-4 hover:decoration-current"
+          >
+            nosso Instagram<span className="sr-only"> (abre em nova aba)</span>
+          </a>
+          .
+        </p>
+      )}
 
       <dialog
         ref={dialogRef}

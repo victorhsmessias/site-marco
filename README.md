@@ -51,6 +51,8 @@ Depois de editar, rode `npm run build` e publique a pasta `out/` de novo.
 2. Acrescente a foto em `src/data/portfolio.ts` (categoria, texto alternativo, crédito, largura e altura do original) e, se for para a galeria, na lista `portfolio` no fim do arquivo.
 3. Rode `npm run images`. O script gera AVIF e WebP em vários tamanhos em `public/images/portfolio/`, nunca maiores que o original, e avisa se `portfolio.ts` não bater com os arquivos.
 
+Não coloque fotos direto em `public/images/portfolio/`: a pasta é apagada e gerada de novo a cada `npm run images`. Para tirar bordas de prints (moldura do Instagram, cantos arredondados do celular), acrescente o recorte em `CROPS`, em `scripts/optimize-images.mjs`; o original não é alterado, e a largura e a altura em `portfolio.ts` passam a ser as do recorte.
+
 ### Ligar os depoimentos
 
 Em `src/data/testimonials.ts`, substitua os itens de exemplo por depoimentos reais (sem `example: true`) e troque `SHOW_TESTIMONIALS` para `true`. A seção e o item "Depoimentos" do menu aparecem sozinhos. Itens marcados como exemplo nunca são exibidos, mesmo com a flag ligada.

@@ -150,5 +150,211 @@
     ],
     "fallbackWidth": 960,
     "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACQBACdASoQAB0APu1krU2ppaSiMAgBMB2JQBOmUGeVCTA69+FViH0eu8XIb2AA/hmoEX6soJs6ypeQ0aP1yLKOcIicHvgHO/DvF1yqWmjqjU8XM1ikIcUROQWgTs6uKS3mGPKP/KgHwue5GYvLqroV+IyJSSgmCwXIeaXxZuR6Y+qpgAA="
+  },
+  "15anos-01-debutante-tunel-de-flores": {
+    "width": 1440,
+    "height": 1800,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYgCdMoADTt2NmfjI6Ya+OAD+hy4W+Z/0xGHXUB1ssYOoq+NVYJB1AflDuXhKBSreiHA4tJjRPHcAAAA="
+  },
+  "15anos-02-debutante-com-os-pais": {
+    "width": 1440,
+    "height": 1800,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZACw7CHKNnTtvgnAAP7aUNMBZ3ukIqc63QSpMzcynSVeVASEIRdCj857dDjP6r2CiEGamGoAeSxhWEOL8HJJxmaAAAAA"
+  },
+  "15anos-03-giro-vestido-palco": {
+    "width": 1440,
+    "height": 1800,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZgCdL46A/+DBoYDSEXAAzEEyk7kyWugvapVBS3cLWeVJQ0Nc9ejSxTY05YkoHufwGtQHrh/cuaVDC8gbW4JoQM53+TkK7GlCUAAA"
+  },
+  "15anos-04-bolo-arco-floral": {
+    "width": 1440,
+    "height": 1800,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACQAwCdASoQABQAPu1iqk4ppaQiMAgBMB2JQBOgA9GpaSxANI2AAP7svnGbG7Un84rDL3N3r4zhYfm0g+SlazCpq6CD6GrmjAvADwG+CFFBGw3qfDYWFar5h1NrEzwA"
+  },
+  "15anos-05-danca-com-o-pai": {
+    "width": 1440,
+    "height": 1800,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JYwAAV/+Fo5wVuJRYYCgA/uTWX2FFLnueJ1ysnHbUYhxlFg6kzXZ9sqFMit8zvCG3IWoZ1LngAA=="
+  },
+  "15anos-06-pista-de-danca": {
+    "width": 1228,
+    "height": 1536,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1228
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYgCdMoMsdEiYz1/TT0C8StJcAP7pGrGx0Dak58ljxqi9l2GTeQaoDwAr2Mkezt2KOWfM85vdQ8WR+Rdvnt6SKiVxOxzFKD7ymEC/94tV//Ho4AA="
+  },
+  "aniversario-01-decoracao-dourada": {
+    "width": 1440,
+    "height": 1800,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCo9BnRDv5yP+2KAAD+2YzZQPo7KjPa2MiRHip2RD1Gx5zPqpskKKEjvs+Xd7Pi1gh+tQkvAAAA"
+  },
+  "aniversario-02-flores-brancas-sofa": {
+    "width": 1440,
+    "height": 1799,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwC7ABK3FvqPMnNbEMLAAPg9QOiqEBMYMulDsoqE7mE1OZCx+HL43Dc4bkwK4i0bksigS6eg/hhLLtkV6fV3ed/HobMAAAA="
+  },
+  "aniversario-03-atracao-artistica": {
+    "width": 1440,
+    "height": 1800,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBOgAYRLD0aUR1PXAAD+8N3vudRklYAY8SbbGSUcuyAt02MnrgKq1qwOElsAybLLyQOlq3TKn6yCB7KaxyfjIvyxYBBsfjovjMZAAAA="
+  },
+  "corporativo-01-retrato-fundador-closeup": {
+    "width": 1440,
+    "height": 1919,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoQABUAPu1kq04ppaQiMAgBMB2JZQAAQe/mercqc+ztAAD+6/z7iprZXatOIS4nXJFTlXuraI2hiS4XqzEv68J/sakFG3zupg05bek02MAAAA=="
+  },
+  "corporativo-02-retrato-fundador-sentado": {
+    "width": 1440,
+    "height": 1920,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwBACdASoQABUAPu1kqU2ppaQiMAgBMB2JZQDLLBwwhbhZnJSCuZFSr0AA/q+OJGni9EJPyskkhlpL3hIeZpgWu9yayEGzx4YYykEiz0ft/rapasCuEANALrizyD9AAAA="
+  },
+  "corporativo-03-retrato-fundador-corpo-inteiro": {
+    "width": 1440,
+    "height": 1920,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1280,
+      1440
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoQABUAPu1mq04ppaQiMAgBMB2JZwAAPzPoRMcR7hiUSgAA9yjc0yl1xAbrZt9fBX1bq+EHpg03YxcVQV6QTqssT/2nNQKgsea+mUQEAAA="
+  },
+  "corporativo-04-assessor-coordenando-evento": {
+    "width": 1236,
+    "height": 2235,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1236
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADQAwCdASoQAB0APu1kq04ppaQiMAgBMB2JQBOg7wARLkWtlqagpXAA/rIJBVNDsiP3RAQ6YyKQ0ZdsQJ6IFDSzb7Ywi5gXrKJLLbINo7ovp+zJokqd1dspKhy2y3Ipf98tG7KDZwGzlbH0aorvI9RpspqBhYUFwAA="
+  },
+  "corporativo-06-inauguracao-emporio-guimaraes": {
+    "width": 1236,
+    "height": 2235,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1236
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQBACdASoQAB0APu1mq04ppaQiMAgBMB2JbACdLwABNNey9nowCuFvAAD4VrOpNAKsdU0+tVMqJQ7rIfvNyvLNgq6wA+Jm6PG39l2QcRebt/dfm57zyaWfXneqGbptHI3YKdbgaxoeHum6zH1OxhTtOqnz59DNbyHuljVfsNqEHN4EcRPoAAAA"
+  },
+  "institucional-05-cerimonial-de-formatura": {
+    "width": 1236,
+    "height": 2235,
+    "widths": [
+      360,
+      540,
+      720,
+      960,
+      1236
+    ],
+    "fallbackWidth": 960,
+    "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoQAB0APu1kqk4ppaQiMAgBMB2JbACdMoR4GBMPLHnGHH3pWJwAAP7HZdn73q/fpgOBAYpBuVyJR/b2NrXtnxWRSY/9/Dt7iPWSLkzIuK05uRv1yfsSHzKhKDz/icBm5GbLs7SX3VPH2E2r4SWtcTRFrgIjGHHxBl+PZ2ixVZY1Lz0M9TXP2dgA"
   }
 }

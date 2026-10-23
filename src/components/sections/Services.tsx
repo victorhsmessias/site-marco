@@ -14,11 +14,9 @@ export function Services() {
       aria-labelledby="servicos-title"
       className="on-dark relative overflow-clip bg-forest pb-section text-ivory"
     >
-      {/* Faixa decorativa: os nomes dos serviços correm de lado conforme a página rola.
-          Letras só com contorno: o preenchimento tem a cor do fundo e cobre a metade
-          interna do traço (paint-order), o que deixa o contorno limpo. */}
+      {/* Faixa decorativa: os nomes dos serviços correm de lado conforme a página rola. */}
       <div aria-hidden="true" className="overflow-x-clip border-b border-ivory/10 py-7 sm:py-9">
-        <div className="marquee-track font-display flex w-max items-center gap-8 text-[clamp(2.75rem,8vw,6.5rem)] leading-none font-medium whitespace-nowrap text-forest italic [paint-order:stroke_fill] [-webkit-text-stroke:2px_color-mix(in_srgb,var(--color-gold)_75%,var(--color-forest))] sm:gap-12">
+        <div className="marquee-track font-display flex w-max items-center gap-8 text-[clamp(2.75rem,8vw,6.5rem)] leading-none font-medium whitespace-nowrap text-[color-mix(in_srgb,var(--color-gold)_75%,var(--color-forest))] italic sm:gap-12">
           {[...published, ...published].map((service, index) => (
             <span key={`${service.id}-${index}`} className="flex items-center gap-8 sm:gap-12">
               {service.title}

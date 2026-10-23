@@ -35,6 +35,25 @@ function widthsFor(originalWidth) {
 
 const idFromFile = (file) => file.replace(/^marcobispo-/, '').replace(/\.jpe?g$/i, '');
 
+/** Recorte de 24 px em cada lado: tira os cantos pretos arredondados de prints da tela do celular. */
+const screenshotInset = (width, height) => ({ left: 24, top: 24, width: width - 48, height: height - 48 });
+
+// Recortes aplicados antes de gerar as versões. O arquivo original não é alterado;
+// largura e altura em portfolio.ts passam a ser as do recorte.
+const CROPS = {
+  // Print do Instagram: moldura branca e uma tira da foto vizinha à esquerda.
+  'marcobispo-15anos-06-pista-de-danca.jpg': { left: 118, top: 140, width: 1228, height: 1536 },
+  'marcobispo-corporativo-04-assessor-coordenando-evento.jpg': screenshotInset(1284, 2283),
+  'marcobispo-corporativo-06-inauguracao-emporio-guimaraes.jpg': screenshotInset(1284, 2283),
+  'marcobispo-institucional-05-cerimonial-de-formatura.jpg': screenshotInset(1284, 2283),
+};
+
+/** Abre a foto já girada pela orientação EXIF e recortada, se houver recorte. */
+function load(file) {
+  const image = sharp(path.join(sourceDir, file)).rotate();
+  return CROPS[file] ? image.extract(CROPS[file]) : image;
+}
+
 async function main() {
   // `--check`: só confere portfolio.ts contra o manifesto já gerado, sem reprocessar as fotos.
   if (process.argv.includes('--check')) {
@@ -55,12 +74,11 @@ async function main() {
 
   for (const file of files) {
     const id = idFromFile(file);
-    const input = path.join(sourceDir, file);
-    const { width, height } = await sharp(input).rotate().metadata();
+    const { width, height } = CROPS[file] ?? (await sharp(path.join(sourceDir, file)).rotate().metadata());
     const widths = widthsFor(width);
 
     for (const w of widths) {
-      const base = sharp(input).rotate().resize({ width: w, withoutEnlargement: true });
+      const base = load(file).resize({ width: w, withoutEnlargement: true });
       const [avif, webp] = await Promise.all([
         base.clone().avif(AVIF).toFile(path.join(outDir, `${id}-${w}.avif`)),
         base.clone().webp(WEBP).toFile(path.join(outDir, `${id}-${w}.webp`)),
@@ -69,15 +87,13 @@ async function main() {
     }
 
     const fallbackWidth = widths.filter((w) => w <= FALLBACK_WIDTH).at(-1) ?? widths[0];
-    await sharp(input)
-      .rotate()
+    await load(file)
       .resize({ width: fallbackWidth, withoutEnlargement: true })
       .jpeg(JPEG)
       .toFile(path.join(outDir, `${id}-${fallbackWidth}.jpg`));
 
     // Miniatura borrada (≈ 300 bytes) usada como fundo enquanto a foto carrega.
-    const placeholder = await sharp(input)
-      .rotate()
+    const placeholder = await load(file)
       .resize({ width: 16 })
       .blur(1)
       .webp({ quality: 40 })
