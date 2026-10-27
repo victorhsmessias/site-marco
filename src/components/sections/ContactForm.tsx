@@ -67,8 +67,8 @@ export function ContactForm() {
         {contact.formTitle}
       </h3>
 
-      <div className="mt-7 grid gap-5 sm:grid-cols-2">
-        <div className="sm:col-span-2">
+      <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        <div className="sm:col-span-2 lg:col-span-1 xl:col-span-2">
           <label htmlFor="contato-nome" className="mb-2 block text-sm font-medium">
             Nome
           </label>
@@ -139,7 +139,7 @@ export function ContactForm() {
           />
         </div>
 
-        <div className="sm:col-span-2">
+        <div className="sm:col-span-2 lg:col-span-1 xl:col-span-2">
           <label htmlFor="contato-mensagem" className="mb-2 block text-sm font-medium">
             Mensagem{OPTIONAL}
           </label>

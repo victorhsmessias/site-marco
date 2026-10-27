@@ -29,7 +29,7 @@ function widthsFor(originalWidth) {
   const largest = widths.at(-1) ?? 0;
   const maxTarget = TARGET_WIDTHS.at(-1);
   // Aproveita a resolução total de originais pequenos (ex.: 900 px).
-  if (originalWidth < maxTarget && originalWidth - largest >= 120) widths.push(originalWidth);
+  if (originalWidth < maxTarget && originalWidth - largest >= 64) widths.push(originalWidth);
   return widths;
 }
 

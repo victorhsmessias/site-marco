@@ -8,11 +8,6 @@ import { images } from '@/data/portfolio';
 
 const rise = (delay: number) => ({ '--rise-delay': `${delay}ms` }) as CSSProperties;
 
-/**
- * Hero editorial dividido: texto à esquerda e foto vertical à direita, com uma
- * segunda foto menor sobreposta. No celular o texto vem primeiro e as fotos logo
- * abaixo. As fotos são verticais, por isso nada de faixa horizontal em tela cheia.
- */
 export function Hero() {
   return (
     <section
@@ -20,7 +15,7 @@ export function Hero() {
       aria-labelledby="hero-title"
       className="relative overflow-x-clip pt-[calc(var(--header-h)+2rem)] pb-20 lg:pt-[calc(var(--header-h)+3rem)] lg:pb-28"
     >
-      <div className="mx-auto grid max-w-site gap-14 px-gutter lg:grid-cols-12 lg:items-center lg:gap-8">
+      <div className="mx-auto grid max-w-site gap-20 px-gutter lg:grid-cols-12 lg:items-center lg:gap-8">
         <div className="lg:col-span-6">
           <p className="eyebrow hero-rise">{hero.eyebrow}</p>
 
@@ -45,7 +40,7 @@ export function Hero() {
 
           <div
             data-fab-hide
-            className="hero-rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4"
+            className="hero-rise mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
             style={rise(240)}
           >
             <WhatsAppLink location="hero" className="btn btn-primary">
@@ -62,8 +57,8 @@ export function Hero() {
             style={rise(320)}
           >
             {hero.proof.map((item) => (
-              <li key={item} className="flex items-center gap-3">
-                <span aria-hidden="true" className="h-1 w-1 rounded-full bg-gold" />
+              <li key={item} className="flex items-start gap-3">
+                <span aria-hidden="true" className="mt-[0.55em] h-1 w-1 shrink-0 rounded-full bg-gold" />
                 {item}
               </li>
             ))}
@@ -72,7 +67,6 @@ export function Hero() {
 
         <div className="relative mx-auto w-full max-w-[34rem] lg:col-span-6 lg:col-start-7 lg:mr-0 lg:max-w-none xl:col-span-5 xl:col-start-8">
           <figure className="relative ml-auto w-[84%]">
-            {/* Ao rolar, a foto sobe e o arco dourado fica um pouco para trás. */}
             <div className="parallax-up">
               <div className="relative">
                 <div aria-hidden="true" className="parallax-soft absolute inset-0">

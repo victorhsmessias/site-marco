@@ -43,7 +43,7 @@ export function Process() {
         <figure className="mx-auto w-full max-w-[30rem] lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:max-w-none lg:self-start">
           <div data-reveal="image">
             <Picture
-              image={images.assessorCerimonia}
+              image={images.processoVelas}
               sizes="(min-width: 1280px) 490px, (min-width: 1024px) 40vw, (min-width: 640px) 480px, 90vw"
               className="block aspect-[4/5] overflow-hidden bg-sand"
               imgClassName="h-full w-full object-cover"

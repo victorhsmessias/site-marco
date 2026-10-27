@@ -18,17 +18,18 @@ export const hero = {
 
 export const about = {
   eyebrow: 'Sobre',
-  title: 'Somos uma empresa que respira amor',
-  paragraphs: [
-    'A Marco Bispo Assessoria nasceu em 2014, em Londrina. Com muito trabalho, conquistamos nosso espaço na cidade e na região, cuidando de casamentos, festas de 15 anos, aniversários e eventos corporativos que marcam a vida de quem confia na gente.',
-    'Como assessoria de eventos em Londrina, acompanhamos cada etapa de perto: planejamento, organização e gerenciamento, para que você aproveite o caminho com tranquilidade.',
+  title: 'Somos uma empresa que respira amor',  paragraphs: [
+    'Marco Bispo trabalha com eventos desde os 12 anos. Antes de abrir a própria empresa, passou por todas as etapas de uma celebração, do atendimento aos noivos à execução no grande dia, e ouviu de perto o que noivos, pais e assessores esperavam de uma assessoria.',
+    'No início de 2014, essa experiência deu origem à Marco Bispo Assessoria, em Londrina, já com escritório próprio. Em 2019, a empresa inaugurou um escritório maior. Hoje cuidamos de casamentos, festas de 15 anos, aniversários e eventos corporativos em Londrina e região.',
+    'Nosso jeito de trabalhar é de perto: a mesma equipe acompanha o planejamento, a organização e o gerenciamento, com atenção ao orçamento desde a primeira conversa. Boa parte dos nossos clientes chega por indicação de casais e de fornecedores.',
   ],
-  // TODO(content): afirmação do cliente, sem fonte ("entre as 5 melhores empresas
-  // de assessoria da cidade"). Confirmar a origem (prêmio, ranking, ano) ou
-  // desligar com `show: false`.
   rankingClaim: {
     show: true,
-    text: 'Hoje estamos entre as 5 melhores empresas de assessoria da cidade.',
+    text: 'Em 2019, com pouco mais de cinco anos de estrada, a empresa já aparecia entre as cinco melhores assessorias de Londrina, segundo o portal',
+    source: {
+      label: 'Inesquecível Casamento',
+      url: 'https://inesquecivelcasamento.com.br/dicas-e-inspiracoes/assessoria-producao-e-cerimonial/tudo-sobre-a-carreira-de-marco-bispo-assessoria/',
+    },
   },
   quote:
     'Nosso compromisso é transcender expectativas, envolvendo cada detalhe com um toque de excelência, para que sua história seja contada em eventos eternamente marcantes.',
@@ -58,8 +59,7 @@ export const processIntro = {
   eyebrow: 'Como funciona',
   title: 'Um caminho claro, da primeira conversa ao pós-evento',
   lead: 'Você sabe o que acontece em cada etapa e conta com a nossa equipe em todas elas.',
-  // TODO(content): confirmar quem aparece na foto desta seção (ver CONTENT_TODO.md).
-  photoCaption: 'Bastidores de uma cerimônia',
+  photoCaption: 'Cada detalhe acompanhado de perto',
 };
 
 export const portfolioIntro = {
@@ -90,5 +90,4 @@ export const contact = {
   eventTypes: ['Casamento', 'Festa de 15 anos', 'Aniversário', 'Evento corporativo', 'Outro evento'],
 };
 
-/** Texto único de chamada para ação, usado em todos os botões de orçamento. */
 export const CTA_LABEL = 'Solicitar orçamento';

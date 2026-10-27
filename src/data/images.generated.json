@@ -356,5 +356,27 @@
     ],
     "fallbackWidth": 960,
     "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoQAB0APu1kqk4ppaQiMAgBMB2JbACdMoR4GBMPLHnGHH3pWJwAAP7HZdn73q/fpgOBAYpBuVyJR/b2NrXtnxWRSY/9/Dt7iPWSLkzIuK05uRv1yfsSHzKhKDz/icBm5GbLs7SX3VPH2E2r4SWtcTRFrgIjGHHxBl+PZ2ixVZY1Lz0M9TXP2dgA"
+  },
+  "processo-velas": {
+    "width": 640,
+    "height": 640,
+    "widths": [
+      360,
+      540,
+      640
+    ],
+    "fallbackWidth": 640,
+    "placeholder": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoQABAAA4BaJYgCdADbIiBxkNgA/vEZNcFqn8x4ZcEVwLp1Ovm+ed0nb0AmxQqTE1Cf4ouAAAA="
+  },
+  "sobre-retrato-fundador-cafe": {
+    "width": 640,
+    "height": 639,
+    "widths": [
+      360,
+      540,
+      640
+    ],
+    "fallbackWidth": 640,
+    "placeholder": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABQAgCdASoQABAAA4BaJZQAAueCD3mXy9HvXAAA/sfcGFyEsT3weXdpf659rfvNqjIMbndB8nZAAA=="
   }
 }

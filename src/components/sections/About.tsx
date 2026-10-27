@@ -6,21 +6,21 @@ import { images } from '@/data/portfolio';
 import { stagger } from '@/lib/motion';
 
 export function About() {
-  const photo = images.casalLoiroDecoracao;
+  const photo = images.fundadorRetratoSentado;
 
   return (
     <section id="sobre" aria-labelledby="sobre-title" className="bg-sand py-section">
       <div className="mx-auto max-w-site px-gutter">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-8">
           <figure className="mx-auto w-full max-w-[30rem] lg:col-span-5 lg:max-w-none">
-            <div data-reveal="image">
-              <Picture
-                image={photo}
-                sizes="(min-width: 1280px) 490px, (min-width: 1024px) 40vw, (min-width: 640px) 480px, 90vw"
-                className="block aspect-[4/5] overflow-clip bg-line"
-                imgClassName="img-parallax h-full w-full object-cover"
-              />
-            </div>
+            {/* Baixa junto com a página e aparece inteira, sem a moldura que se abre. */}
+            <Picture
+              image={photo}
+              eager
+              sizes="(min-width: 1280px) 490px, (min-width: 1024px) 40vw, (min-width: 640px) 480px, 90vw"
+              className="block aspect-[4/5] overflow-clip bg-line"
+              imgClassName="img-parallax h-full w-full object-cover"
+            />
             <figcaption className="mt-3">
               <PhotoCreditLine credit={photo.credit} />
             </figcaption>
@@ -33,7 +33,21 @@ export function About() {
               {about.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
-              {about.rankingClaim.show && <p>{about.rankingClaim.text}</p>}
+              {about.rankingClaim.show && (
+                <p>
+                  {about.rankingClaim.text}{' '}
+                  <a
+                    href={about.rankingClaim.source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-forest underline decoration-gold decoration-1 underline-offset-4 hover:decoration-current"
+                  >
+                    {about.rankingClaim.source.label}
+                    <span className="sr-only"> (abre em nova aba)</span>
+                  </a>
+                  .
+                </p>
+              )}
             </div>
 
             <blockquote

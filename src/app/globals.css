@@ -28,7 +28,7 @@
   --color-field: #8c8778; /* borda de campos de formulário (3:1) */
 
   /* Tipografia fluida */
-  --text-display: clamp(2.75rem, 1.55rem + 5.4vw, 5.75rem);
+  --text-display: clamp(2.75rem, 1.6rem + 4.2vw, 5.75rem);
   --text-display--line-height: 1.02;
   --text-display--letter-spacing: -0.015em;
   --text-h2: clamp(2.125rem, 1.5rem + 2.7vw, 3.5rem);
@@ -127,7 +127,8 @@
   /* Rótulo pequeno acima dos títulos de seção */
   .eyebrow {
     display: inline-flex;
-    align-items: center;
+    /* Fio alinhado à primeira linha quando o rótulo quebra em duas. */
+    align-items: flex-start;
     gap: 0.875rem;
     font-size: 0.75rem;
     font-weight: 500;
@@ -139,8 +140,10 @@
 
   .eyebrow::before {
     content: '';
+    flex-shrink: 0;
     width: 2.25rem;
     height: 1px;
+    margin-top: 0.7em;
     background-color: var(--color-gold);
   }
 
@@ -164,10 +167,20 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     text-align: center;
+    white-space: nowrap;
     transition:
       background-color 0.3s var(--ease-soft),
       border-color 0.3s var(--ease-soft),
       color 0.3s var(--ease-soft);
+  }
+
+  /* Celulares estreitos (até 400 px): o texto do botão cabe numa linha. */
+  @media (max-width: 25rem) {
+    .btn {
+      gap: 0.5rem;
+      padding-inline: 1rem;
+      letter-spacing: 0.1em;
+    }
   }
 
   .btn-sm {
@@ -435,9 +448,33 @@ main {
     .parallax-up,
     .parallax-down,
     .parallax-soft {
-      animation: linear both;
+      /* Propriedades separadas de propósito: o atalho `animation: linear both`, sem
+         nome, vira `animation: none` no CSS minificado e perde o `both`. Sem ele, as
+         fotos voltam de uma vez para o lugar no fim do intervalo. */
+      animation-timing-function: linear;
+      animation-fill-mode: both;
       animation-timeline: scroll(root block);
       animation-range: 0 100vh;
+    }
+
+    /* Distâncias do parallax. No celular e no tablet as fotos ficam abaixo do texto:
+       elas sobem menos, para nunca encostar nele. */
+    .parallax-up,
+    .parallax-down,
+    .parallax-soft {
+      --parallax-up: -1.5rem;
+      --parallax-down: 1.5rem;
+      --parallax-soft: 0.75rem;
+    }
+
+    @media (min-width: 64rem) {
+      .parallax-up,
+      .parallax-down,
+      .parallax-soft {
+        --parallax-up: -5rem;
+        --parallax-down: 3rem;
+        --parallax-soft: 1.75rem;
+      }
     }
 
     .parallax-up {
@@ -454,19 +491,19 @@ main {
 
     @keyframes parallax-up {
       to {
-        transform: translateY(-5rem);
+        transform: translateY(var(--parallax-up));
       }
     }
 
     @keyframes parallax-down {
       to {
-        transform: translateY(3rem);
+        transform: translateY(var(--parallax-down));
       }
     }
 
     @keyframes parallax-soft {
       to {
-        transform: translateY(1.75rem);
+        transform: translateY(var(--parallax-soft));
       }
     }
 

@@ -1,15 +1,4 @@
-/**
- * Fotos do site.
- *
- * Para adicionar ou trocar uma foto:
- *   1. coloque o arquivo original em `assets-originais/` (nome `marcobispo-NN-descricao.jpg`);
- *   2. acrescente ou edite a entrada abaixo (largura e altura do arquivo original);
- *   3. rode `npm run images` para gerar as versões otimizadas.
- *
- * TODO(content): estas imagens vieram do Instagram e servem só para a versão de
- * apresentação. Antes de publicar, obter os arquivos originais e a autorização de
- * uso dos fotógrafos e dos casais (ver CONTENT_TODO.md).
- */
+
 
 export type PortfolioCategory =
   | 'casamentos'
@@ -18,36 +7,24 @@ export type PortfolioCategory =
   | 'eventos-corporativos';
 
 export type PhotoCredit = {
-  /** O que a pessoa creditada fez: fotografia ou decoração. */
   role: 'Foto' | 'Decoração';
-  /** Perfil no Instagram, com @. */
   handle: string;
 };
 
 export type PortfolioImage = {
-  /** Identificador usado no nome dos arquivos gerados em `public/images/portfolio/`. */
   id: string;
-  /** Arquivo original em `assets-originais/`. */
   file: string;
-  /** Tipos de evento da foto. Vazio = aparece só em "Todos". */
   categories: PortfolioCategory[];
-  /** Texto alternativo: descreve a cena, sem citar nomes. */
   alt: string;
-  /** `null` = crédito ainda não confirmado (não aparece no site). */
   credit: PhotoCredit | null;
-  /** Largura e altura do arquivo original, em pixels. */
   width: number;
   height: number;
-  /** Ponto de foco quando a foto é recortada (CSS `object-position`). */
   position?: string;
-  /** Proporção do recorte na galeria. No lightbox a foto aparece inteira. */
   galleryRatio?: '3 / 4' | '4 / 5' | '1 / 1' | '4 / 3';
 };
 
 export const portfolioCategories: { id: PortfolioCategory; label: string }[] = [
   { id: 'casamentos', label: 'Casamentos' },
-  // Um filtro por tipo de evento atendido, mesmo sem fotos ainda: nesse caso a
-  // galeria mostra um aviso com o link do Instagram.
   { id: 'festas-de-15-anos', label: 'Festas de 15 anos' },
   { id: 'aniversarios', label: 'Aniversários' },
   { id: 'eventos-corporativos', label: 'Eventos corporativos' },
@@ -81,7 +58,7 @@ export const images = {
     file: 'marcobispo-03-casal-copos-de-leite.jpg',
     categories: ['casamentos'],
     alt: 'Noivo de terno claro abraça a noiva, que sorri de olhos fechados segurando um buquê de copos-de-leite',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1284,
     height: 1712,
     position: '50% 40%',
@@ -92,7 +69,7 @@ export const images = {
     file: 'marcobispo-04-casal-preto-e-branco.jpg',
     categories: ['casamentos'],
     alt: 'Retrato em preto e branco de um casal de noivos se olhando diante de uma cortina',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1284,
     height: 1712,
     position: '50% 35%',
@@ -125,7 +102,7 @@ export const images = {
     file: 'marcobispo-07-casal-bolo.jpg',
     categories: ['casamentos'],
     alt: 'Casal de noivos posa ao lado do bolo de casamento, em um salão decorado com velas e arranjos de copos-de-leite',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 3072,
     height: 4096,
     position: '50% 35%',
@@ -136,7 +113,7 @@ export const images = {
     file: 'marcobispo-08-casal-close.jpg',
     categories: ['casamentos'],
     alt: 'Noivo de terno claro beija o rosto da noiva, que segura um buquê branco, em um salão com mesas postas',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 3024,
     height: 4032,
     position: '50% 30%',
@@ -183,7 +160,7 @@ export const images = {
     file: 'marcobispo-15anos-01-debutante-tunel-de-flores.jpg',
     categories: ['festas-de-15-anos'],
     alt: 'Debutante de costas, com vestido branco de cauda longa e bordada, diante de um túnel de flores em tons de rosa',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1440,
     height: 1800,
     position: '50% 50%',
@@ -194,7 +171,7 @@ export const images = {
     file: 'marcobispo-15anos-02-debutante-com-os-pais.jpg',
     categories: ['festas-de-15-anos'],
     alt: 'Debutante de vestido branco tomara que caia caminha de mãos dadas com um homem de terno azul e uma mulher de vestido vermelho, sob um arco de flores e luzes',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1440,
     height: 1800,
     position: '50% 55%',
@@ -205,7 +182,7 @@ export const images = {
     file: 'marcobispo-15anos-03-giro-vestido-palco.jpg',
     categories: ['festas-de-15-anos'],
     alt: 'Debutante gira o vestido branco ao dançar com um rapaz de terno na pista, sob feixes de luz azul e lilás',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1440,
     height: 1800,
     position: '50% 50%',
@@ -216,7 +193,7 @@ export const images = {
     file: 'marcobispo-15anos-04-bolo-arco-floral.jpg',
     categories: ['festas-de-15-anos'],
     alt: 'Debutante de vestido branco ao lado do bolo de vários andares, sob um grande arco de flores rosadas e um lustre de cristal',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1440,
     height: 1800,
     position: '60% 55%',
@@ -227,7 +204,7 @@ export const images = {
     file: 'marcobispo-15anos-05-danca-com-o-pai.jpg',
     categories: ['festas-de-15-anos'],
     alt: 'Debutante dança na pista com o monograma da festa, conduzida por um rapaz de terno, sob luzes lilás',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1440,
     height: 1800,
     position: '50% 55%',
@@ -239,7 +216,7 @@ export const images = {
     file: 'marcobispo-15anos-06-pista-de-danca.jpg',
     categories: ['festas-de-15-anos'],
     alt: 'Debutante de vestido rosa de plumas faz uma selfie ao lado do cantor da festa, cercada de convidados com celulares erguidos',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1228,
     height: 1536,
     position: '50% 50%',
@@ -250,7 +227,7 @@ export const images = {
     file: 'marcobispo-aniversario-01-decoracao-dourada.jpg',
     categories: ['aniversarios'],
     alt: 'Aniversariante de vestido azul-claro bordado posa diante de uma mesa preta e dourada com arranjos de folhas douradas',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1440,
     height: 1800,
     position: '50% 45%',
@@ -261,7 +238,7 @@ export const images = {
     file: 'marcobispo-aniversario-02-flores-brancas-sofa.jpg',
     categories: ['aniversarios'],
     alt: 'Aniversariante de vestido azul-claro segura a cauda do vestido diante de um sofá branco e de grandes flores de papel brancas na parede',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1440,
     height: 1799,
     position: '50% 55%',
@@ -272,19 +249,18 @@ export const images = {
     file: 'marcobispo-aniversario-03-atracao-artistica.jpg',
     categories: ['aniversarios'],
     alt: 'Artistas com figurinos de paetês prateados, um deles em pernas de pau, se apresentam sob uma instalação de folhas douradas',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1440,
     height: 1800,
     position: '50% 50%',
     galleryRatio: '3 / 4',
   },
-  // Prints da tela do celular: recortados em scripts/optimize-images.mjs.
   corporativoAssessorCoordenando: {
     id: 'corporativo-04-assessor-coordenando-evento',
     file: 'marcobispo-corporativo-04-assessor-coordenando-evento.jpg',
     categories: ['eventos-corporativos'],
     alt: 'Assessor de terno escuro conversa com um convidado durante um evento',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null,
     width: 1236,
     height: 2235,
     position: '50% 30%',
@@ -295,31 +271,29 @@ export const images = {
     file: 'marcobispo-corporativo-06-inauguracao-emporio-guimaraes.jpg',
     categories: ['eventos-corporativos'],
     alt: 'Assessor de blazer claro segura uma taça de espumante em uma inauguração, diante de uma parede de plantas',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1236,
     height: 2235,
     position: '50% 35%',
     galleryRatio: '4 / 5',
   },
-  // TODO(content): formatura não é um dos quatro tipos de evento. Hoje aparece só em "Todos".
   cerimonialDeFormatura: {
     id: 'institucional-05-cerimonial-de-formatura',
     file: 'marcobispo-institucional-05-cerimonial-de-formatura.jpg',
     categories: [],
     alt: 'Mestre de cerimônias de terno fala ao microfone em uma formatura, diante de um telão colorido',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null,
     width: 1236,
     height: 2235,
     position: '50% 30%',
     galleryRatio: '3 / 4',
   },
-  // Retratos de estúdio do fundador: não são fotos de evento, por isso ficam fora da galeria.
   fundadorRetratoCloseup: {
     id: 'corporativo-01-retrato-fundador-closeup',
     file: 'marcobispo-corporativo-01-retrato-fundador-closeup.jpg',
     categories: [],
-    alt: 'Retrato do fundador da Marco Bispo Assessoria, de terno azul-marinho e gravata clara, sobre fundo cinza',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    alt: 'Marco Bispo, fundador da assessoria, sorri em retrato de terno azul-marinho e gravata clara, sobre fundo cinza',
+    credit: null, 
     width: 1440,
     height: 1919,
     position: '50% 30%',
@@ -328,8 +302,8 @@ export const images = {
     id: 'corporativo-02-retrato-fundador-sentado',
     file: 'marcobispo-corporativo-02-retrato-fundador-sentado.jpg',
     categories: [],
-    alt: 'Fundador da Marco Bispo Assessoria, de terno azul-marinho, sentado com uma xícara de café na mão',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    alt: 'Marco Bispo, fundador da assessoria, sorri sentado, de terno azul-marinho e gravata clara, com uma xícara de café na mão',
+    credit: null, 
     width: 1440,
     height: 1920,
     position: '50% 30%',
@@ -339,20 +313,35 @@ export const images = {
     file: 'marcobispo-corporativo-03-retrato-fundador-corpo-inteiro.jpg',
     categories: [],
     alt: 'Fundador da Marco Bispo Assessoria, de terno azul-marinho, sentado sobre um cubo branco em estúdio',
-    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    credit: null, 
     width: 1440,
     height: 1920,
     position: '50% 40%',
   },
+
+  fundadorRetratoCafe: {
+    id: 'sobre-retrato-fundador-cafe',
+    file: 'marcobispo-sobre-retrato-fundador-cafe.jpg',
+    categories: [],
+    alt: 'Marco Bispo, fundador da assessoria, sorri de terno azul-marinho e gravata clara, com uma xícara de café na mão, sobre fundo cinza',
+    credit: null, 
+    width: 640,
+    height: 639,
+    position: '100% 50%',
+  },
+  processoVelas: {
+    id: 'processo-velas',
+    file: 'marcobispo-processo-velas.jpg',
+    categories: [],
+    alt: 'Velas altas acesas em candelabros prateados, com folhagens e luzes desfocadas ao fundo',
+    credit: null, // TODO(content): confirmar crédito do fotógrafo
+    width: 640,
+    height: 640,
+    position: '50% 50%',
+  },
 } satisfies Record<string, PortfolioImage>;
 
-/**
- * Fotos da galeria do portfólio, na ordem em que aparecem.
- *
- * A galeria preenche uma coluna de cada vez (de cima para baixo), com 3 colunas
- * no computador e 2 no celular. A ordem mistura os tipos de evento para que
- * "Todos" não fique com um tipo só em cada coluna.
- */
+
 export const portfolio: PortfolioImage[] = [
   images.noivaNoCarro,
   images.debutanteTunelDeFlores,

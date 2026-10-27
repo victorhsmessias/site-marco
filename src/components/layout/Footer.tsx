@@ -35,12 +35,16 @@ export function Footer() {
             <ul className="mt-3">
               <li>
                 <WhatsAppLink location="footer" className={linkClass}>
-                  WhatsApp {site.whatsapp.display}
+                  <span>
+                    WhatsApp <span className="whitespace-nowrap">{site.whatsapp.display}</span>
+                  </span>
                 </WhatsAppLink>
               </li>
               <li>
                 <a href={site.phone.href} className={linkClass}>
-                  Telefone {site.phone.display}
+                  <span>
+                    Telefone <span className="whitespace-nowrap">{site.phone.display}</span>
+                  </span>
                 </a>
               </li>
               <li>

@@ -5,33 +5,21 @@ import { imageSources } from '@/lib/images';
 
 type PictureProps = {
   image: PortfolioImage;
-  /** Largura que a foto ocupa na tela em cada ponto de quebra (atributo `sizes`). */
   sizes: string;
-  /** Use apenas na imagem do LCP: carrega antes de tudo, com prioridade alta. */
   priority?: boolean;
-  /** Classes do elemento `<picture>` (a moldura: proporção, bordas, recorte). */
+  eager?: boolean;
   className?: string;
-  /** Classes do `<img>`. */
   imgClassName?: string;
   imgStyle?: CSSProperties;
-  /** Fundo borrado enquanto a foto carrega. */
   placeholder?: boolean;
-  /** Substitui o texto alternativo padrão da foto (use "" se for decorativa). */
   alt?: string;
 };
 
-/**
- * Foto responsiva em AVIF e WebP, com JPEG de reserva.
- *
- * Substitui o `next/image`: em exportação estática o otimizador do Next não
- * roda, então as versões são geradas antes do build (`npm run images`) e este
- * componente monta o `srcset` só com tamanhos que existem de fato, sem nunca
- * ampliar uma foto além do original.
- */
 export function Picture({
   image,
   sizes,
   priority = false,
+  eager = false,
   className,
   imgClassName,
   imgStyle,
@@ -66,7 +54,7 @@ export function Picture({
         width={sources.width}
         height={sources.height}
         alt={alt ?? image.alt}
-        loading={priority ? 'eager' : 'lazy'}
+        loading={priority || eager ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : undefined}
         decoding={priority ? 'sync' : 'async'}
         className={imgClassName}

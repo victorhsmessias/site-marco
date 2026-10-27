@@ -68,7 +68,6 @@ export function PortfolioGallery({ items, categories }: PortfolioGalleryProps) {
     if (!start) return;
     const dx = event.clientX - start.x;
     const dy = event.clientY - start.y;
-    // Só conta como gesto se for mais horizontal que vertical.
     if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy) * 1.5) {
       step(dx < 0 ? 1 : -1);
     }
@@ -79,7 +78,7 @@ export function PortfolioGallery({ items, categories }: PortfolioGalleryProps) {
       <div
         role="group"
         aria-label="Filtrar fotos do portfólio"
-        className="mt-10 flex flex-wrap gap-2.5"
+        className="mt-10 flex flex-wrap gap-1.5 sm:gap-2.5"
         data-reveal
       >
         {filters.map((option) => (
@@ -88,7 +87,7 @@ export function PortfolioGallery({ items, categories }: PortfolioGalleryProps) {
             type="button"
             aria-pressed={filter === option.id}
             onClick={() => setFilter(option.id)}
-            className="min-h-11 rounded-full border border-forest/30 px-5 text-sm font-medium text-forest transition-colors duration-300 hover:border-forest aria-pressed:border-forest aria-pressed:bg-forest aria-pressed:text-ivory"
+            className="min-h-11 rounded-full border border-forest/30 px-3.5 text-[0.8125rem] font-medium sm:text-sm lg:px-5 text-forest transition-colors duration-300 hover:border-forest aria-pressed:border-forest aria-pressed:bg-forest aria-pressed:text-ivory"
           >
             {option.label}
           </button>
