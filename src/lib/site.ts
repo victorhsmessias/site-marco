@@ -76,6 +76,11 @@ export const site = {
     closes: string;
   } | null,
 
+  // TODO(content): coordenadas do escritório, copiadas do Perfil da Empresa no
+  // Google (para bater com o pino do Maps). Enquanto for `null`, ficam fora dos
+  // dados estruturados. Exemplo: { latitude: -23.31, longitude: -51.16 }
+  geo: null as { latitude: number; longitude: number } | null,
+
   // TODO(content): e-mail de contato (também usado na Política de Privacidade
   // como canal para pedidos sobre dados pessoais). `null` = não aparece.
   email: null as string | null,

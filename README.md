@@ -107,7 +107,7 @@ src/lib/                 dados da empresa, WhatsApp, imagens e medição
 - **Botão flutuante de WhatsApp:** some quando já há um botão de orçamento visível (hero, contato e rodapé) e enquanto o aviso de cookies está na tela.
 - **Dourado em texto:** o champanhe `#B89B6A` não tem contraste suficiente sobre fundo claro. Em texto sobre claro usa-se o tom escuro `#735A2E`; o champanhe fica para fios, detalhes e o botão sobre verde.
 - **Verde da marca:** `#203C2E`, tirado do site antigo. As logos são os SVGs oficiais baixados de `marcobispo.com/IMG`.
-- **Dados estruturados:** `LocalBusiness` (schema.org não tem um tipo `EventPlanner`). Horário e coordenadas ficam de fora até serem confirmados. Sem marcação de FAQ, porque as respostas ainda são provisórias.
+- **Dados estruturados** (`src/components/seo/JsonLd.tsx`): em todas as páginas, um `@graph` com `LocalBusiness` (schema.org não tem um tipo `EventPlanner`) e `WebSite`; na página inicial, `FAQPage` gerado de `src/data/faq.ts`; na Política de Privacidade, `BreadcrumbList`. Só entram informações que aparecem na página. Horário, e-mail e coordenadas (`openingHours`, `email`, `geo` em `src/lib/site.ts`) entram sozinhos quando forem preenchidos. O FAQ é marcado mesmo com as respostas ainda provisórias, porque elas já estão visíveis; o Google só mostra resultado rico de FAQ para sites de governo e saúde, então o ganho é de clareza para Bing e buscas por IA.
 - **TypeScript 5.9 e ESLint 9:** as versões mais novas (7 e 10) ainda não são aceitas por todas as ferramentas de lint do Next.
 
 ## Resultados medidos

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { GA_ID, META_PIXEL_ID, analyticsEnabled } from '@/lib/analytics';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { socialMetadata } from '@/lib/seo';
 import { fullAddress, site } from '@/lib/site';
 
@@ -169,6 +170,7 @@ export default function PrivacyPolicyPage() {
           Voltar para o início
         </a>
       </p>
+      <BreadcrumbJsonLd name={PAGE_TITLE} path="/politica-de-privacidade/" />
     </article>
   );
 }
