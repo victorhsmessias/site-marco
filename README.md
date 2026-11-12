@@ -78,7 +78,7 @@ docker build -t marcobispo-site .
 docker run --rm -p 8080:80 marcobispo-site     # http://localhost:8080
 ```
 
-Em qualquer caso, o site precisa estar em **HTTPS** no domínio `https://www.marcobispo.com` (canonical, sitemap e imagem de compartilhamento usam esse endereço). Se o domínio mudar, defina `NEXT_PUBLIC_SITE_URL` antes do build. Depois de publicar, envie `https://www.marcobispo.com/sitemap.xml` ao Google Search Console.
+Em qualquer caso, o site precisa estar em **HTTPS**. O endereço público vem da variável `NEXT_PUBLIC_SITE_URL` (canonical, sitemap, robots.txt, Open Graph e dados estruturados usam esse valor); nenhum domínio fica fixo no código. Na Vercel, se a variável estiver vazia, vale o domínio de produção do projeto (`VERCEL_PROJECT_PRODUCTION_URL`); fora dela, o padrão é `http://localhost:3000`. Defina a variável em *Settings → Environment Variables* (ambiente Production) e gere o build de novo sempre que o domínio mudar. A troca do endereço temporário para o domínio definitivo está em [`docs/seo/checklist-migracao-dominio.md`](docs/seo/checklist-migracao-dominio.md).
 
 ## Estrutura
 

@@ -8,10 +8,27 @@
 // dígito a mais. Usamos o número do link.
 export const WHATSAPP_NUMBER = '5543988395494';
 
+/**
+ * Endereço público do site, sem barra no fim. Nada de domínio fixo no código:
+ * 1. `NEXT_PUBLIC_SITE_URL`, definida no build (o domínio definitivo, com https://);
+ * 2. na Vercel, o domínio de produção do projeto (`VERCEL_PROJECT_PRODUCTION_URL`,
+ *    que já passa a ser o domínio próprio quando ele é configurado);
+ * 3. em desenvolvimento, http://localhost:3000.
+ */
+function resolveSiteUrl(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (fromEnv) return fromEnv.replace(/\/+$/, '');
+
+  const vercelProduction = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  if (vercelProduction) return `https://${vercelProduction.replace(/\/+$/, '')}`;
+
+  return 'http://localhost:3000';
+}
+
 export const site = {
   name: 'Marco Bispo Assessoria',
   shortName: 'Marco Bispo',
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.marcobispo.com').replace(/\/$/, ''),
+  url: resolveSiteUrl(),
   locale: 'pt_BR',
   foundingYear: 2014,
   city: 'Londrina',
