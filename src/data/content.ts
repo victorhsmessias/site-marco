@@ -7,7 +7,8 @@
  */
 
 export const hero = {
-  eyebrow: 'Assessoria de eventos em Londrina',
+  // É o H1 da página: serviço e cidade, as palavras que as pessoas buscam.
+  eyebrow: 'Assessoria de casamentos e eventos em Londrina',
   // A palavra em `titleEmphasis` aparece em itálico dourado, no fim do título.
   title: 'Fazemos do seu dia um evento',
   titleEmphasis: 'inesquecível',
@@ -18,9 +19,13 @@ export const hero = {
 
 export const about = {
   eyebrow: 'Sobre',
-  title: 'Somos uma empresa que respira amor',  paragraphs: [
+  title: 'Somos uma empresa que respira amor',
+  paragraphs: [
+    // Primeira frase: quem somos, onde, desde quando e o que fazemos, em uma linha
+    // fácil de citar por buscadores e assistentes de IA. Só fatos já publicados.
+    'A Marco Bispo Assessoria é uma assessoria de eventos de Londrina/PR, fundada em 2014 por Marco Bispo, que cuida de casamentos, festas de 15 anos, aniversários e eventos corporativos em Londrina e região.',
     'Marco Bispo trabalha com eventos desde os 12 anos. Antes de abrir a própria empresa, passou por todas as etapas de uma celebração, do atendimento aos noivos à execução no grande dia, e ouviu de perto o que noivos, pais e assessores esperavam de uma assessoria.',
-    'No início de 2014, essa experiência deu origem à Marco Bispo Assessoria, em Londrina, já com escritório próprio. Em 2019, a empresa inaugurou um escritório maior. Hoje cuidamos de casamentos, festas de 15 anos, aniversários e eventos corporativos em Londrina e região.',
+    'No início de 2014, essa experiência deu origem à Marco Bispo Assessoria, em Londrina, já com escritório próprio. Em 2019, a empresa inaugurou um escritório maior.',
     'Nosso jeito de trabalhar é de perto: a mesma equipe acompanha o planejamento, a organização e o gerenciamento, com atenção ao orçamento desde a primeira conversa. Boa parte dos nossos clientes chega por indicação de casais e de fornecedores.',
   ],
   rankingClaim: {

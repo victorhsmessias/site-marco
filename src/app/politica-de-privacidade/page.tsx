@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { GA_ID, META_PIXEL_ID, analyticsEnabled } from '@/lib/analytics';
+import { socialMetadata } from '@/lib/seo';
 import { fullAddress, site } from '@/lib/site';
 
 // TODO(content): texto-base, escrito para descrever o que este site faz de fato.
@@ -8,11 +9,18 @@ import { fullAddress, site } from '@/lib/site';
 // e preencher em `src/lib/site.ts`: razão social, CNPJ e e-mail de contato.
 const LAST_UPDATED = '12 de outubro de 2026';
 
+const PAGE_TITLE = 'Política de Privacidade';
+const PAGE_DESCRIPTION = `Como a ${site.name} trata os dados pessoais de quem visita este site, conforme a Lei Geral de Proteção de Dados (LGPD).`;
+
 export const metadata: Metadata = {
-  title: 'Política de Privacidade',
-  description: `Como a ${site.name} trata os dados pessoais de quem visita este site, conforme a Lei Geral de Proteção de Dados (LGPD).`,
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   alternates: { canonical: '/politica-de-privacidade/' },
-  openGraph: { url: '/politica-de-privacidade/', title: 'Política de Privacidade' },
+  ...socialMetadata({
+    path: '/politica-de-privacidade/',
+    title: `${PAGE_TITLE} | ${site.name}`,
+    description: PAGE_DESCRIPTION,
+  }),
 };
 
 function Topic({ title, children }: { title: string; children: ReactNode }) {

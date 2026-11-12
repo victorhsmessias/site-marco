@@ -8,6 +8,7 @@ import { Header } from '@/components/layout/Header';
 import { RevealObserver } from '@/components/layout/RevealObserver';
 import { WhatsAppFab } from '@/components/layout/WhatsAppFab';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { seo, socialMetadata } from '@/lib/seo';
 import { site } from '@/lib/site';
 import './globals.css';
 
@@ -27,39 +28,16 @@ const sans = DM_Sans({
   display: 'swap',
 });
 
-const title = `${site.name} | Assessoria de casamento e eventos em Londrina`;
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: title,
+    default: seo.title,
     template: `%s | ${site.name}`,
   },
-  description: site.description,
+  description: seo.description,
   applicationName: site.name,
   alternates: { canonical: '/' },
-  openGraph: {
-    type: 'website',
-    locale: site.locale,
-    url: '/',
-    siteName: site.name,
-    title,
-    description: site.description,
-    images: [
-      {
-        url: '/og.jpg',
-        width: 1200,
-        height: 630,
-        alt: `Logo da ${site.name} ao lado de uma noiva sorridente com buquê de copos-de-leite`,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title,
-    description: site.description,
-    images: ['/og.jpg'],
-  },
+  ...socialMetadata({ path: '/', title: seo.title, description: seo.description }),
   robots: { index: true, follow: true },
   formatDetection: { telephone: false, address: false, email: false },
 };

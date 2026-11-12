@@ -1,3 +1,5 @@
+import { site } from '@/lib/site';
+
 export type FaqItem = {
   question: string;
   answer: string;
@@ -38,7 +40,7 @@ export const faq: FaqItem[] = [
   {
     question: 'Onde fica o escritório e como agendo um atendimento?',
     // TODO(content): confirmar horário de atendimento e se é necessário agendar.
-    answer:
-      'Nosso escritório fica na Rua Piauí, 399, Sala 706, Ed. São Paulo Towers, em Londrina/PR. Para agendar um atendimento, chame no WhatsApp ou ligue para (43) 3361-1633.',
+    // Endereço e telefone vêm de `site.ts`, para nunca divergirem do resto do site.
+    answer: `Nosso escritório fica na ${site.address.street}, ${site.address.complement}, em ${site.address.city}/${site.address.state}. Para agendar um atendimento, chame no WhatsApp ou ligue para ${site.phone.display}.`,
   },
 ];
