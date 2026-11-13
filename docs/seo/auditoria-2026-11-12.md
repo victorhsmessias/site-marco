@@ -130,3 +130,19 @@ Nenhum desses dados será inventado. Cada item entra no site quando for confirma
 - Depoimentos reais com autorização.
 - Para as páginas por serviço: texto de cada serviço e mais fotos de corporativo e aniversário.
 - Fora do site: Google Business Profile (categoria, NAP idêntico, link para o site, fotos, posts, avaliações) e perfil no casamentos.com.br.
+
+## Testes de performance descartados (Fase 3)
+
+| Teste | Resultado | Decisão |
+|---|---|---|
+| `experimental.inlineCss` (CSS embutido no HTML) | HTML comprimido de 53 para 85 KB (o CSS sai duplicado no payload RSC); LCP de laboratório de 3,4 s para 3,5–3,7 s | Descartado |
+| Cormorant itálica sem preload (2 fontes pré-carregadas em vez de 3) | LCP igual (3,4–3,5 s); CLS de 0 para 0,017 em 3 de 3 execuções, porque a palavra "inesquecível" muda de posição quando o itálico chega | Descartado (regra: só manter com CLS 0) |
+
+## Risco de CLS ainda aberto
+
+Teste viewport a viewport entre 280 e 428 px, comparando a posição do parágrafo do hero com todas as combinações de fonte carregada/não carregada:
+
+- O slogan é estável em toda a faixa, com exceção de 312–316 px (larguras raras).
+- O H1 ("Assessoria de casamentos e eventos em Londrina", em DM Sans com espaçamento largo) quebra em uma linha a mais com a fonte reserva em 292–304 px e em **344–360 px** (360 px é uma largura comum de Android). Diferença de 17 px.
+- Na prática, só vira CLS quando a DM Sans (pré-carregada, 37 KB) chega depois da primeira pintura. Nos traces medidos, ela chegou antes.
+- Correções possíveis (exigem decisão de design): reservar 3 linhas para o H1 no celular (mais cerca de 17 px de espaço em 375–428 px) ou encurtar o texto do H1.
