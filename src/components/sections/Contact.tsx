@@ -70,7 +70,12 @@ export function Contact() {
             </ContactRow>
 
             <ContactRow index={1} icon={<PhoneIcon className="h-5 w-5" />} label="Telefone">
-              <a href={site.phone.href} className={rowLink}>
+              <a
+                href={site.phone.href}
+                data-track="click_phone"
+                data-track-location="contact"
+                className={rowLink}
+              >
                 {site.phone.display}
               </a>
             </ContactRow>
@@ -83,6 +88,8 @@ export function Contact() {
               </address>
               <a
                 href={address.mapsUrl}
+                data-track="click_directions"
+                data-track-location="contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${rowLink} text-sm text-sage`}
@@ -98,6 +105,8 @@ export function Contact() {
             <ContactRow index={3} icon={<InstagramIcon className="h-5 w-5" />} label="Instagram">
               <a
                 href={site.instagram.url}
+                data-track="click_instagram"
+                data-track-location="contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={rowLink}

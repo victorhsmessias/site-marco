@@ -1,3 +1,4 @@
+import { FaqJsonLd } from '@/components/seo/JsonLd';
 import { About } from '@/components/sections/About';
 import { Contact } from '@/components/sections/Contact';
 import { Faq } from '@/components/sections/Faq';
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Testimonials />
       <Faq />
       <Contact />
+      <FaqJsonLd />
     </>
   );
 }

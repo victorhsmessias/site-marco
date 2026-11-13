@@ -3,15 +3,30 @@
  * Alterar aqui atualiza cabeçalho, rodapé, contato, metadados e dados estruturados.
  */
 
-// TODO(content): confirmar número com o cliente. O link do site antigo aponta
-// para (43) 98839-5494, mas o rodapé antigo mostrava "(43) 988395-4943", com um
-// dígito a mais. Usamos o número do link.
+// WhatsApp (43) 98839-5494, confirmado pelo cliente em 12/11/2026.
 export const WHATSAPP_NUMBER = '5543988395494';
+
+/**
+ * Endereço público do site, sem barra no fim. Nada de domínio fixo no código:
+ * 1. `NEXT_PUBLIC_SITE_URL`, definida no build (o domínio definitivo, com https://);
+ * 2. na Vercel, o domínio de produção do projeto (`VERCEL_PROJECT_PRODUCTION_URL`,
+ *    que já passa a ser o domínio próprio quando ele é configurado);
+ * 3. em desenvolvimento, http://localhost:3000.
+ */
+function resolveSiteUrl(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (fromEnv) return fromEnv.replace(/\/+$/, '');
+
+  const vercelProduction = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  if (vercelProduction) return `https://${vercelProduction.replace(/\/+$/, '')}`;
+
+  return 'http://localhost:3000';
+}
 
 export const site = {
   name: 'Marco Bispo Assessoria',
   shortName: 'Marco Bispo',
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.marcobispo.com').replace(/\/$/, ''),
+  url: resolveSiteUrl(),
   locale: 'pt_BR',
   foundingYear: 2014,
   city: 'Londrina',
@@ -58,6 +73,11 @@ export const site = {
     opens: string;
     closes: string;
   } | null,
+
+  // TODO(content): coordenadas do escritório, copiadas do Perfil da Empresa no
+  // Google (para bater com o pino do Maps). Enquanto for `null`, ficam fora dos
+  // dados estruturados. Exemplo: { latitude: -23.31, longitude: -51.16 }
+  geo: null as { latitude: number; longitude: number } | null,
 
   // TODO(content): e-mail de contato (também usado na Política de Privacidade
   // como canal para pedidos sobre dados pessoais). `null` = não aparece.

@@ -3,6 +3,10 @@
 #   docker build -t marcobispo-site .
 #   docker run --rm -p 8080:80 marcobispo-site      → http://localhost:8080
 #
+# Informe o endereço público do site no build (canonical, sitemap, Open Graph e
+# dados estruturados usam esse valor). Sem ele, o build usa http://localhost:3000.
+#   docker build --build-arg NEXT_PUBLIC_SITE_URL=https://seu-dominio -t marcobispo-site .
+#
 # Para ligar a medição, passe as variáveis no build, por exemplo:
 #   docker build --build-arg NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX -t marcobispo-site .
 
@@ -14,7 +18,7 @@ RUN npm ci --no-audit --no-fund
 
 COPY . .
 
-ARG NEXT_PUBLIC_SITE_URL=https://www.marcobispo.com
+ARG NEXT_PUBLIC_SITE_URL=
 ARG NEXT_PUBLIC_GA_MEASUREMENT_ID=
 ARG NEXT_PUBLIC_META_PIXEL_ID=
 ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL \

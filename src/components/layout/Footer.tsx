@@ -41,7 +41,12 @@ export function Footer() {
                 </WhatsAppLink>
               </li>
               <li>
-                <a href={site.phone.href} className={linkClass}>
+                <a
+                  href={site.phone.href}
+                  data-track="click_phone"
+                  data-track-location="footer"
+                  className={linkClass}
+                >
                   <span>
                     Telefone <span className="whitespace-nowrap">{site.phone.display}</span>
                   </span>
@@ -50,6 +55,8 @@ export function Footer() {
               <li>
                 <a
                   href={site.instagram.url}
+                  data-track="click_instagram"
+                  data-track-location="footer"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${linkClass} gap-2.5`}
@@ -76,6 +83,8 @@ export function Footer() {
             </address>
             <a
               href={address.mapsUrl}
+              data-track="click_directions"
+              data-track-location="footer"
               target="_blank"
               rel="noopener noreferrer"
               className={`${linkClass} underline decoration-ivory/30 decoration-1 underline-offset-4`}

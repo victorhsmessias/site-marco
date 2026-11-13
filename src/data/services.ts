@@ -37,7 +37,7 @@ export const services: Service[] = [
     id: 'eventos-corporativos',
     title: 'Eventos corporativos',
     description:
-      'Planejamento e coordenação de eventos corporativos, com organização e pontualidade em cada etapa.',
+      'Planejamento e coordenação de eventos corporativos em Londrina e região, com organização e pontualidade em cada etapa.',
     eventType: 'Evento corporativo',
     published: true,
   },

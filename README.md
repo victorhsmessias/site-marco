@@ -63,6 +63,8 @@ Desligada por padrão. Copie `.env.example` para `.env.local`, preencha `NEXT_PU
 
 - aparece um aviso de cookies, e os scripts só carregam depois do "Aceitar";
 - todo botão de WhatsApp envia o evento `click_whatsapp` (com o local do clique: `hero`, `header`, `contact_form` etc.); no Meta Pixel ele vira o evento padrão `Contact`;
+- os links de telefone, "Ver no mapa" e Instagram enviam `click_phone`, `click_directions` e `click_instagram`, também com o local do clique (`contact`, `footer`, `menu`, `portfolio`);
+- no GA4, marque `click_whatsapp` e `click_phone` como **eventos-chave** (Administrador → Eventos → marcar como evento-chave), para que apareçam como conversões nos relatórios e no Google Ads;
 - a Política de Privacidade passa a citar as ferramentas ativas.
 
 ## Como publicar
@@ -78,7 +80,7 @@ docker build -t marcobispo-site .
 docker run --rm -p 8080:80 marcobispo-site     # http://localhost:8080
 ```
 
-Em qualquer caso, o site precisa estar em **HTTPS** no domínio `https://www.marcobispo.com` (canonical, sitemap e imagem de compartilhamento usam esse endereço). Se o domínio mudar, defina `NEXT_PUBLIC_SITE_URL` antes do build. Depois de publicar, envie `https://www.marcobispo.com/sitemap.xml` ao Google Search Console.
+Em qualquer caso, o site precisa estar em **HTTPS**. O endereço público vem da variável `NEXT_PUBLIC_SITE_URL` (canonical, sitemap, robots.txt, Open Graph e dados estruturados usam esse valor); nenhum domínio fica fixo no código. Na Vercel, se a variável estiver vazia, vale o domínio de produção do projeto (`VERCEL_PROJECT_PRODUCTION_URL`); fora dela, o padrão é `http://localhost:3000`. Defina a variável em *Settings → Environment Variables* (ambiente Production) e gere o build de novo sempre que o domínio mudar. A troca do endereço temporário para o domínio definitivo está em [`docs/seo/checklist-migracao-dominio.md`](docs/seo/checklist-migracao-dominio.md).
 
 ## Estrutura
 
@@ -107,7 +109,7 @@ src/lib/                 dados da empresa, WhatsApp, imagens e medição
 - **Botão flutuante de WhatsApp:** some quando já há um botão de orçamento visível (hero, contato e rodapé) e enquanto o aviso de cookies está na tela.
 - **Dourado em texto:** o champanhe `#B89B6A` não tem contraste suficiente sobre fundo claro. Em texto sobre claro usa-se o tom escuro `#735A2E`; o champanhe fica para fios, detalhes e o botão sobre verde.
 - **Verde da marca:** `#203C2E`, tirado do site antigo. As logos são os SVGs oficiais baixados de `marcobispo.com/IMG`.
-- **Dados estruturados:** `LocalBusiness` (schema.org não tem um tipo `EventPlanner`). Horário e coordenadas ficam de fora até serem confirmados. Sem marcação de FAQ, porque as respostas ainda são provisórias.
+- **Dados estruturados** (`src/components/seo/JsonLd.tsx`): em todas as páginas, um `@graph` com `LocalBusiness` (schema.org não tem um tipo `EventPlanner`) e `WebSite`; na página inicial, `FAQPage` gerado de `src/data/faq.ts`; na Política de Privacidade, `BreadcrumbList`. Só entram informações que aparecem na página. Horário, e-mail e coordenadas (`openingHours`, `email`, `geo` em `src/lib/site.ts`) entram sozinhos quando forem preenchidos. O Google só mostra resultado rico de FAQ para sites de governo e saúde; aqui o `FAQPage` serve para deixar claro o que é pergunta e resposta para o Bing e as buscas por IA.
 - **TypeScript 5.9 e ESLint 9:** as versões mais novas (7 e 10) ainda não são aceitas por todas as ferramentas de lint do Next.
 
 ## Resultados medidos

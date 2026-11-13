@@ -14,11 +14,13 @@ export function Services() {
       aria-labelledby="servicos-title"
       className="on-dark relative overflow-clip bg-forest pb-section text-ivory"
     >
-      {/* Faixa decorativa: os nomes dos serviços correm de lado conforme a página rola. */}
+      {/* Faixa decorativa: os nomes dos serviços correm de lado conforme a página rola.
+          Uma cópia basta: o deslocamento (globals.css, @keyframes marquee) é menor
+          que a largura da faixa, e o HTML não repete os nomes dos serviços. */}
       <div aria-hidden="true" className="overflow-x-clip border-b border-ivory/10 py-7 sm:py-9">
         <div className="marquee-track font-display flex w-max items-center gap-8 text-[clamp(2.75rem,8vw,6.5rem)] leading-none font-medium whitespace-nowrap text-[color-mix(in_srgb,var(--color-gold)_75%,var(--color-forest))] italic sm:gap-12">
-          {[...published, ...published].map((service, index) => (
-            <span key={`${service.id}-${index}`} className="flex items-center gap-8 sm:gap-12">
+          {published.map((service) => (
+            <span key={service.id} className="flex items-center gap-8 sm:gap-12">
               {service.title}
               <span className="h-2 w-2 rotate-45 bg-gold/70" />
             </span>

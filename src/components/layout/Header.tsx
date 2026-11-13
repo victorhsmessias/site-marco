@@ -163,6 +163,8 @@ export function Header() {
               <li>
                 <a
                   href={site.phone.href}
+                  data-track="click_phone"
+                  data-track-location="menu"
                   className="flex min-h-11 items-center gap-2.5 hover:text-ivory"
                 >
                   <PhoneIcon className="h-5 w-5 text-gold-light" />
@@ -172,6 +174,8 @@ export function Header() {
               <li>
                 <a
                   href={site.instagram.url}
+                  data-track="click_instagram"
+                  data-track-location="menu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex min-h-11 items-center gap-2.5 hover:text-ivory"

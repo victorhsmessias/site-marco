@@ -17,11 +17,18 @@ export function Hero() {
     >
       <div className="mx-auto grid max-w-site gap-20 px-gutter lg:grid-cols-12 lg:items-center lg:gap-8">
         <div className="lg:col-span-6">
-          <p className="eyebrow hero-rise">{hero.eyebrow}</p>
+          {/* O H1 é o rótulo com o serviço e a cidade (o que se busca); o slogan,
+              maior, vem logo abaixo como parágrafo de destaque. */}
+          <h1 id="hero-title" className="eyebrow hero-rise">
+            {hero.eyebrow}
+          </h1>
 
-          <h1
-            id="hero-title"
-            className="font-display text-display hero-rise mt-6 font-medium text-balance text-forest"
+          {/* No celular, o slogan fica com no máximo 8,2em de largura e sempre quebra
+              em 3 linhas. Sem isso, em telas de 414 a 428 px ele ocupava 3 linhas com
+              a fonte reserva e 2 com a Cormorant itálica, e a troca de fonte empurrava
+              o resto do hero (CLS). */}
+          <p
+            className="font-display text-display hero-rise mt-6 font-medium text-balance text-forest max-sm:max-w-[8.2em]"
             style={rise(80)}
           >
             {hero.title}{' '}
@@ -29,7 +36,7 @@ export function Hero() {
             <span aria-hidden="true" className="text-gold">
               .
             </span>
-          </h1>
+          </p>
 
           <p
             className="text-lead hero-rise mt-7 max-w-[34rem] text-pretty text-ink-muted"
