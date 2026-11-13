@@ -3,9 +3,7 @@
  * Alterar aqui atualiza cabeçalho, rodapé, contato, metadados e dados estruturados.
  */
 
-// TODO(content): confirmar número com o cliente. O link do site antigo aponta
-// para (43) 98839-5494, mas o rodapé antigo mostrava "(43) 988395-4943", com um
-// dígito a mais. Usamos o número do link.
+// WhatsApp (43) 98839-5494, confirmado pelo cliente em 12/11/2026.
 export const WHATSAPP_NUMBER = '5543988395494';
 
 /**
