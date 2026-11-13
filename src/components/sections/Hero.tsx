@@ -23,8 +23,12 @@ export function Hero() {
             {hero.eyebrow}
           </h1>
 
+          {/* No celular, o slogan fica com no máximo 8,2em de largura e sempre quebra
+              em 3 linhas. Sem isso, em telas de 414 a 428 px ele ocupava 3 linhas com
+              a fonte reserva e 2 com a Cormorant itálica, e a troca de fonte empurrava
+              o resto do hero (CLS). */}
           <p
-            className="font-display text-display hero-rise mt-6 font-medium text-balance text-forest"
+            className="font-display text-display hero-rise mt-6 font-medium text-balance text-forest max-sm:max-w-[8.2em]"
             style={rise(80)}
           >
             {hero.title}{' '}
