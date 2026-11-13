@@ -59,7 +59,10 @@ Onde mudar: campo `credit` de cada foto em `src/data/portfolio.ts`.
 - [ ] **E-mail de contato**, se a empresa quiser divulgar um (`email` em `src/lib/site.ts`).
 - [ ] **Crédito de desenvolvimento no rodapé** (`developerCredit` em `src/lib/site.ts`). Hoje o rodapé não mostra crédito.
 - [ ] **Medição.** Criar a propriedade do GA4 e/ou o Meta Pixel e preencher `.env.local` (ver README).
-- [ ] **Perfil da Empresa no Google.** Conferir se nome, endereço e telefone do perfil estão iguais aos do site. Com as coordenadas do endereço confirmadas, dá para acrescentá-las aos dados estruturados (`src/components/seo/JsonLd.tsx`).
+- [ ] **Perfil da Empresa no Google.** Conferir se nome, endereço e telefone do perfil estão iguais aos do site. Copiar as coordenadas do pino para `geo` em `src/lib/site.ts`: elas entram sozinhas nos dados estruturados.
+- [ ] **Perfil no casamentos.com.br.** As buscas "assessoria de casamento Londrina" e "cerimonialista Londrina" mostram quase só perfis desse diretório. Criar ou atualizar o perfil com o mesmo nome, endereço e telefone do site e o link para ele.
+- [ ] **Páginas por serviço** (casamento, 15 anos, corporativo, aniversário). Ficaram para a próxima rodada; precisam de texto próprio de cada serviço (o que inclui, como funciona, perguntas) e, para corporativo e aniversário, de mais fotos. Ver `docs/seo/auditoria-2026-11-12.md`.
+- [ ] **Migração para o domínio definitivo.** Passo a passo em `docs/seo/checklist-migracao-dominio.md`.
 - [ ] **Mais fotos de eventos corporativos.** O filtro tem só 2 fotos, ambas prints do celular.
 - [ ] **Foto de formatura** (`institucional-05`). Formatura não é um dos quatro tipos de evento, por isso a foto aparece só em "Todos". Decidir se entra em "Eventos corporativos" ou se vale criar um filtro "Formaturas".
 - [ ] **Retratos do fundador** (`corporativo-01` a `03`). São retratos de estúdio, fora da galeria. O `corporativo-01` agora é a foto do Sobre, com o texto alternativo "Marco Bispo, fundador da assessoria…". Confirmar que a pessoa do retrato é mesmo Marco Bispo.
