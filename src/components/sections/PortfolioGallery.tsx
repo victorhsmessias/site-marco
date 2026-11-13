@@ -112,7 +112,7 @@ export function PortfolioGallery({ items, categories }: PortfolioGalleryProps) {
                 style={stagger(index % 3, 110)}
                 className="group relative block w-full overflow-hidden bg-line"
               >
-                <span className="sr-only">Ampliar foto: </span>
+                <span className="sr-only">Ampliar: </span>
                 <Picture
                   image={item}
                   sizes="(min-width: 1280px) 384px, (min-width: 1024px) 30vw, 46vw"
