@@ -63,6 +63,8 @@ Desligada por padrão. Copie `.env.example` para `.env.local`, preencha `NEXT_PU
 
 - aparece um aviso de cookies, e os scripts só carregam depois do "Aceitar";
 - todo botão de WhatsApp envia o evento `click_whatsapp` (com o local do clique: `hero`, `header`, `contact_form` etc.); no Meta Pixel ele vira o evento padrão `Contact`;
+- os links de telefone, "Ver no mapa" e Instagram enviam `click_phone`, `click_directions` e `click_instagram`, também com o local do clique (`contact`, `footer`, `menu`, `portfolio`);
+- no GA4, marque `click_whatsapp` e `click_phone` como **eventos-chave** (Administrador → Eventos → marcar como evento-chave), para que apareçam como conversões nos relatórios e no Google Ads;
 - a Política de Privacidade passa a citar as ferramentas ativas.
 
 ## Como publicar

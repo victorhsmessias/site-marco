@@ -135,6 +135,8 @@ export function PortfolioGallery({ items, categories }: PortfolioGalleryProps) {
           Ainda não temos fotos de {filterLabel.toLowerCase()} por aqui. Veja mais trabalhos no{' '}
           <a
             href={site.instagram.url}
+            data-track="click_instagram"
+            data-track-location="portfolio_empty"
             target="_blank"
             rel="noopener noreferrer"
             className="text-forest underline decoration-gold decoration-1 underline-offset-4 hover:decoration-current"

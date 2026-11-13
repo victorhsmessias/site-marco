@@ -21,6 +21,8 @@ export function Portfolio() {
         <p className="mt-12 flex justify-center lg:mt-16">
           <a
             href={site.instagram.url}
+            data-track="click_instagram"
+            data-track-location="portfolio"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-outline"
